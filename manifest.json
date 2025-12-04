@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Download Open Tabs",
+  "version": "1.0",
+  "description": "Download a file (TXT/CSV/JSON) that lists all open tabs (title + URL).",
+  "permissions": ["tabs", "downloads", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

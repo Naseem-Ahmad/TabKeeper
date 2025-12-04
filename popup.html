@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Download Tabs</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Download Open Tabs</h2>
+
+    <div class="options">
+      <label><input type="radio" name="format" value="txt" checked> Plain text (.txt)</label>
+      <label><input type="radio" name="format" value="csv"> CSV (.csv)</label>
+      <label><input type="radio" name="format" value="json"> JSON (.json)</label>
+    </div>
+
+    <div class="controls">
+      <button id="downloadAll">Download all windows</button>
+      <button id="downloadCurrent">Download current window</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
