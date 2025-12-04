@@ -1,30 +1,137 @@
+/* ------------------------------
+   GLOBAL
+--------------------------------*/
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --border: #e1e4e8;
+  --text: #111;
+  --muted: #6b7280;
+  --primary: #1a73e8;
+  --danger: #d64545;
+  --radius: 8px;
+  --pad: 12px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  width: 320px;
-  padding: 10px;
+  margin: 0;
+  padding: var(--pad);
+  width: 360px;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
 }
 
+h1 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 14px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   BUTTONS
+--------------------------------*/
 button {
-  margin: 4px 0;
-  padding: 6px 10px;
-  width: 100%;
-}
-
-.list {
-  max-height: 150px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  padding: 5px;
-  margin: 6px 0;
-}
-
-.item {
-  padding: 5px 0;
-  border-bottom: 1px solid #eee;
-}
-
-#status {
-  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  cursor: pointer;
   font-size: 13px;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: #f3f4f6;
+}
+
+button.primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+button.primary:hover {
+  background: #0f5fcc;
+}
+
+button.danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+button.danger:hover {
+  background: #c13434;
+}
+
+/* ------------------------------
+   GRID LAYOUT (6 column / 2 per row)
+--------------------------------*/
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 8px 0;
+}
+
+/* ------------------------------
+   CARD / PANEL STYLE
+--------------------------------*/
+.card {
+  background: var(--card);
+  padding: var(--pad);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* ------------------------------
+   LIST STYLES
+--------------------------------*/
+.list {
+  max-height: 160px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.list .item {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+.list .item:last-child {
+  border-bottom: none;
+}
+
+/* Checkbox alignment */
+.list input[type="checkbox"] {
+  margin-right: 6px;
+  transform: translateY(1px);
+}
+
+/* ------------------------------
+   STATUS
+--------------------------------*/
+#status {
+  margin-top: 10px;
+  font-size: 13px;
+  min-height: 18px;
   color: green;
 }
