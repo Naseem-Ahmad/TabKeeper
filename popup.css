@@ -1,6 +1,59 @@
 /* ------------------------------
    GLOBAL
 --------------------------------*/
+.select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* --- Accordion Layout --- */
+
+.accordion-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* clickable header */
+.accordion-header {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #f1f3f6;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+}
+
+/* body collapses */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .28s ease;
+  padding: 0 10px;
+}
+
+/* active (expanded) section */
+.accordion-section.active .accordion-body {
+  padding: 10px;
+  max-height: 400px; /* adjustable depending on your content */
+}
+
+
 :root {
   --bg: #f5f7fb;
   --card: #ffffff;

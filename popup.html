@@ -6,22 +6,58 @@
   <link rel="stylesheet" href="popup.css"/>
 </head>
 <body>
-  <h1>TabKeeper</h1>
+  <h1>Tab Pro</h1>
 
-<button id="scanBtn" class="primary">Scan Tabs</button>
-<button id="archiveBtn">Archive & Close Selected</button>
+  <!-- 1) Scan & Archive Section -->
+  <div class="accordion-section active" id="section-scan">
+    <div class="accordion-header">Scan & Archive Tabs</div>
+    <div class="accordion-body">
 
+      <button id="scanBtn" class="primary">Scan Tabs</button>
+      <button id="archiveBtn">Archive & Close Selected</button>
 
-  <div id="tabsList" class="list"></div>
+      <div class="button-grid">
+        <button id="selectAllTabsBtn">Select All</button>
+        <button id="deselectAllTabsBtn">Deselect All</button>
+      </div>
 
-<h2>Archives</h2>
-<div class="button-grid">
-  <button id="loadArchivesBtn">Load Archives</button>
-  <button id="restoreLatestBtn">Restore Latest Archive</button>
+      <div id="tabsList" class="list"></div>
+
+    </div>
+  </div>
+
+  <!-- 2) Archives Section -->
+  <div class="accordion-section" id="section-archive">
+    <div class="accordion-header">Archives</div>
+    <div class="accordion-body">
+
+      <button id="loadArchivesBtn">Load Archives</button>
+      <button id="restoreLatestBtn">Restore Latest Archive</button>
+
+      <div id="archivesList" class="list"></div>
+
+    </div>
+  </div>
+
+  <div class="accordion-section" id="section-export">
+  <div class="accordion-header">Export Tabs</div>
+  <div class="accordion-body">
+
+    <label for="exportFormat" style="font-size:13px;color:#555;">Select format:</label>
+    <select id="exportFormat" class="select">
+      <option value="txt">TXT</option>
+      <option value="csv">CSV</option>
+      <option value="json">JSON</option>
+      <option value="excel">Excel (XLS)</option>
+    </select>
+
+    <button id="exportBtn" class="primary" style="margin-top:10px;">
+      Export Tabs
+    </button>
+
+  </div>
 </div>
 
-
-  <div id="archivesList" class="list"></div>
 
   <div id="status"></div>
 
