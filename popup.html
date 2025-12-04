@@ -1,27 +1,25 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Download Tabs</title>
-  <link rel="stylesheet" href="popup.css" />
+  <meta charset="utf-8"/>
+  <title>TabKeeper</title>
+  <link rel="stylesheet" href="popup.css"/>
 </head>
 <body>
-  <div class="container">
-    <h2>Download Open Tabs</h2>
+  <h1>TabKeeper</h1>
 
-    <div class="options">
-      <label><input type="radio" name="format" value="txt" checked> Plain text (.txt)</label>
-      <label><input type="radio" name="format" value="csv"> CSV (.csv)</label>
-      <label><input type="radio" name="format" value="json"> JSON (.json)</label>
-    </div>
+  <button id="scanBtn">Scan Tabs</button>
+  <button id="archiveBtn">Archive & Close Selected</button>
 
-    <div class="controls">
-      <button id="downloadAll">Download all windows</button>
-      <button id="downloadCurrent">Download current window</button>
-    </div>
+  <div id="tabsList" class="list"></div>
 
-    <div id="status" class="status"></div>
-  </div>
+  <h2>Archives</h2>
+  <button id="loadArchivesBtn">Load Archives</button>
+  <button id="restoreLatestBtn">Restore Latest Archive</button>
+
+  <div id="archivesList" class="list"></div>
+
+  <div id="status"></div>
 
   <script src="popup.js"></script>
 </body>
